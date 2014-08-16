@@ -3,7 +3,7 @@
 画像連番で商品写真とかクルクルまわすやつ
 
 ##Demo
-[http://1026.github.io/360rotate/demo/](http://1026.github.io/360rotate/demo/)
+[http://1026.github.io/jQuery.ThreeSixtyRotate/demo/](http://1026.github.io/jQuery.ThreeSixtyRotate/demo/)
 
 ##Usage
 
