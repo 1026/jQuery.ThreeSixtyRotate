@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+<script src="js/jquery.360rotate.js"></script>
+
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    list-style: none;
+  }
+  .test {
+    position: relative;
+    width: 480px;
+    height: 270px;
+  }
+  .test li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  .load {
+    line-height: 270px;
+    text-align: center;
+  }
+</style>
+
+<script type="text/javascript">
+$(function(){
+  ThreeSixtyRotate('.test',{
+    imgPath: 'img/',
+    imgEx: 'png',
+    zeroPadding: 0,
+    imgFirstNum: 1,
+    totalFrame: 23,
+    startFrame: 1,
+    clockwise: false,
+    rotateSpeed: 1,
+    inertia: true,
+    autoRotate: false,
+    frameRate: 24,
+    overStop: true,
+    preload: true,
+    showDuration: 300
+  });
+});
+</script>
+</head>
+<body>
+  <div class="test"><p class="load">Now Loading...</p></div>
+</body>
+</html>
