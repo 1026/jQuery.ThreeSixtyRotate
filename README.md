@@ -9,7 +9,7 @@
 
 HTML
 
-    <div class="test">Now loading...</div>
+    <div class="test"><p>Now loading...</p></div>
     
 CSS
 
