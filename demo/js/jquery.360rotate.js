@@ -73,8 +73,7 @@ ThreeSixtyRotate.prototype.init = function(el, opts){
   self.zeroPad();
   self.setImgSrc();
 
-  $(eventTypes).each(function(t) {
-    var type = eventTypes[t];
+  $(eventTypes).each(function(i, type) {
     self.$el.on(events.start[type],function(e){
       self.eventHandler(e, type);
     });
