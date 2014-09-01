@@ -237,6 +237,9 @@ ThreeSixtyRotate.prototype.update = function(){
 };
 
 // Event Handler
+// 参考: flipsnap.js ( http://pxgrid.github.com/js-flipsnap/ ) 
+//      Copyright 2011 PixelGrid, Inc.
+//      Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
 // ----------------------------------------------
 ThreeSixtyRotate.prototype.eventHandler = function(event, type){
   var self = this;
