@@ -117,17 +117,39 @@ ThreeSixtyRotate.prototype.setImgSrc = function(){
 ThreeSixtyRotate.prototype.preloader = function(){
   var self = this;
 
+  self.alertError();
+
   var i = 0;
 
   $(self.imgs).each(function(){
     var src = this;
-    var $img = $('<img>');
-    $img.on('load',function(){
+    var $img = $('<img>').attr('src',src);
+    if($img[0].complete){
       i += 1;
       if(i >= self.totalFrame){
         self.addFrame();
       }
-    }).attr('src', src);
+    } else {
+      $img.on('error',function(){
+        self.$el.triggerHandler('imgLoadError');
+        return false;
+      });
+
+      $img.on('load',function(){
+        i += 1;
+        if(i >= self.totalFrame){
+          self.addFrame();
+        }
+      });
+    }
+  });
+};
+
+ThreeSixtyRotate.prototype.alertError = function(){
+  var self = this;
+
+  self.$el.one('imgLoadError',function(){
+    alert('Images failed to load');
   });
 };
 
