@@ -121,12 +121,13 @@ ThreeSixtyRotate.prototype.preloader = function(){
 
   $(self.imgs).each(function(){
     var src = this;
-    $('<img/>').attr('src', src).on('load',function(){
+    var $img = $('<img>');
+    $img.on('load',function(){
       i += 1;
       if(i >= self.totalFrame){
         self.addFrame();
       }
-    });
+    }).attr('src', src);
   });
 };
 
