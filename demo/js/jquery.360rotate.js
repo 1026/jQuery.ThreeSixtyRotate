@@ -117,8 +117,6 @@ ThreeSixtyRotate.prototype.setImgSrc = function(){
 ThreeSixtyRotate.prototype.preloader = function(){
   var self = this;
 
-  self.alertError();
-
   var i = 0;
 
   $(self.imgs).each(function(){
@@ -143,10 +141,6 @@ ThreeSixtyRotate.prototype.preloader = function(){
       });
     }
   });
-};
-
-ThreeSixtyRotate.prototype.alertError = function(){
-  var self = this;
 
   self.$el.one('imgLoadError',function(){
     alert('Images failed to load');
