@@ -36,7 +36,7 @@
 &lt;script src="/js/jquery.360rotate.js"&gt;&lt;/script&gt;</code></pre>
   <pre><code class="html">&lt;div class="example"&gt;&lt;p&gt;Now loading...&lt;/p&gt;&lt;/div&gt;</code></pre>
 
-  <p class="h-code"><b>CSS</b></p>
+  <p class="h-code"><b>レスポンシブ非対応CSS</b></p>
   <pre><code class="css">.example {
     position: relative;
     width: ---px;
@@ -51,6 +51,26 @@
     background-size: 100%;
 }
 </code></pre>
+
+  <p class="h-code"><b>レスポンシブ対応CSS</b></p>
+  <pre><code class="css">.example {
+  position: relative;
+  width: ---px;
+  max-width: 100%;
+}
+.example ul {
+  position: relative;
+  width: 100%;
+  padding-top: (height/width*100)%;
+}
+.example li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: 100%;
+}</code></pre>
 
 
   <p class="h-code"><b>JavaScript</b>（optionは初期値を記載）</p>
@@ -106,7 +126,7 @@
 });</code></pre>
 
   <p class="h-code"><b>HTML</b></p>
-<pre><code class="html">&lt;div class="test"&gt;&lt;p&gt;Now loading...&lt;/p&gt;&lt;/div&gt;</code></pre>
+<pre><code class="html">&lt;div class="demo-1"&gt;&lt;p&gt;Now loading...&lt;/p&gt;&lt;/div&gt;</code></pre>
 
 
   <h3>自動回転あり</h3>
