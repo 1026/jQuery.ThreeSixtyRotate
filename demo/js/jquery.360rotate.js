@@ -189,7 +189,7 @@ ThreeSixtyRotate.prototype.startUpdate = function(){
 
   setInterval(function(){
     self.update();
-  },50);
+  },self.frameRate);
 };
 
 // Change Image
