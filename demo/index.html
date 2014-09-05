@@ -1,61 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
+<meta charset="UTF-8">
+<meta name="description" content="画像連番で商品写真とかクルクルまわすやつ">
+<meta name="author" content="1026(Tenjiro Namba)" />
+<title>jQuery.ThreeSixtyRotate.js</title>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+<link type="text/css" rel="stylesheet" href="css/github.css"/>
 <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/highlight.pack.js"></script>
 <script src="js/jquery.360rotate.js"></script>
+<script src="js/demo.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--[if lt IE 9]><script src="js/vendor/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+  <div>
 
-<style type="text/css">
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  ul {
-    list-style: none;
-  }
-  .test {
+<main>
+<article>
+  <header>
+    <h1 itemprop="headline">jQuery.ThreeSixtyRotate.js</h1>
+  </header>
+  
+  <h2>About</h2>
+  <p>画像連番で商品写真とかクルクルまわすやつ</p>
+
+  <h2>Download</h2>
+  <p><a href="https://github.com/1026/jQuery.ThreeSixtyRotate">1026/jQuery.ThreeSixtyRotate</a></p>
+
+  <h2>Usage</h2>
+  <p class="h-code"><b>HTML</b></p>
+  <pre><code class="html">&lt;script type="text/javascript" src="/vendor/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="/js/jquery.360rotate.js"&gt;&lt;/script&gt;</code></pre>
+  <pre><code class="html">&lt;div class="example"&gt;&lt;p&gt;Now loading...&lt;/p&gt;&lt;/div&gt;</code></pre>
+
+  <p class="h-code"><b>CSS</b></p>
+  <pre><code class="css">.example {
     position: relative;
-    width: 480px;
-    height: 270px;
-  }
-  .test li {
+    width: ---px;
+    height: ---px;
+}
+.example li {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    -webkit-background-size: 100%;
     background-size: 100%;
-  }
-  .load {
-    line-height: 270px;
-    text-align: center;
-  }
-</style>
+}
+</code></pre>
 
-<script type="text/javascript">
-$(function(){
-  ThreeSixtyRotate('.test',{
-    imgPath: 'img/',
-    imgEx: 'png',
-    zeroPadding: 0,
-    imgFirstNum: 1,
-    totalFrame: 23,
-    startFrame: 1,
-    clockwise: false,
-    rotateSpeed: 1,
-    inertia: true,
-    autoRotate: false,
-    frameRate: 24,
-    overStop: true,
-    preload: true,
-    showDuration: 300
+
+  <p class="h-code"><b>JavaScript</b>（optionは初期値を記載）</p>
+  <pre><code class="javascript">$(function(){
+  ThreeSixtyRotate('.example',{
+    imgPath: 'img/rotate/', //画像パス（＊必須）（画像ファイル名が数字だけでなければ数字の直前まで）
+    imgEx: 'png',           //画像の拡張子
+    zeroPadding: 1,         //Zero Padding (ex:1→0、01→1、001→2)
+    imgFirstNum: 1,         //一番初めの画像ファイル名の1の位の数字（大抵 0 or 1）
+    totalFrame: 90,         //画像枚数
+    startFrame: 1,          //1フレーム目を何枚目の画像にするか
+    clockwise: true,        //画像の書き出しが、時計回りならtrue、反時計回りならfalse
+    rotateSpeed: 1,         //ドラッグで回転させるときのスピード
+    inertia: true           //慣性 (false で慣性なし)
+    autoRotate: false,      //自動で回転させるか
+    frameRate: 30,          //フレームレート
+    overStop: true,         //自動で回転させた時、マウスオーバーで止めるか否か
+    preload: true,          //画像をプリロードするか（基本trueでいいかと）
+    showDuration: 300       //フェード表示のduration
   });
-});
-</script>
-</head>
-<body>
-  <div class="test"><p class="load">Now Loading...</p></div>
+});</code></pre>
+
+
+  <h2>Browser</h2>
+  <p>IE8+</p>
+
+
+  <h2>Demo</h2>
+  <h3>自動回転なし</h3>
+
+  <p>以下全てのデモでレスポンシブ対応</p>
+
+  <div class="demo">
+    <div class="demo-1 demo-content"><p class="load">Now Loading...</p></div>
+  </div>
+
+  <p class="h-code"><b>JavaScript</b></p>
+<pre><code class="javascript">ThreeSixtyRotate('.demo-1',{
+  imgPath: 'img/',
+  imgEx: 'png',
+  zeroPadding: 0,
+  imgFirstNum: 1,
+  totalFrame: 23,
+  startFrame: 1,
+  clockwise: false,
+  rotateSpeed: 1,
+  inertia: true,
+  autoRotate: false,
+  frameRate: 24,
+  overStop: true,
+  preload: true,
+  showDuration: 300
+});</code></pre>
+
+  <p class="h-code"><b>HTML</b></p>
+<pre><code class="html">&lt;div class="test"&gt;&lt;p&gt;Now loading...&lt;/p&gt;&lt;/div&gt;</code></pre>
+
+
+  <h3>自動回転あり</h3>
+
+  <div class="demo">
+    <div class="demo-2 demo-content"><p class="load">Now Loading...</p></div>
+  </div>
+
+  <p class="h-code"><b>JavaScript</b></p>
+<pre><code class="javascript">ThreeSixtyRotate('.demo-2',{
+  imgPath: 'img/',
+  imgEx: 'png',
+  zeroPadding: 0,
+  imgFirstNum: 1,
+  totalFrame: 23,
+  startFrame: 1,
+  clockwise: false,
+  rotateSpeed: 1,
+  inertia: true,
+  autoRotate: true,
+  frameRate: 24,
+  overStop: true,
+  preload: true,
+  showDuration: 300
+});</code></pre>
+
+  <p class="h-code"><b>HTML</b></p>
+<pre><code class="html">&lt;div class="demo-2"&gt;&lt;p&gt;Now loading...&lt;/p&gt;&lt;/div&gt;</code></pre>
+
+
+
+
+
+  <h3>応用：html上に1枚目の画像を設置、showDuration: 0</h3>
+
+  <p>ページロード時に一枚目の画像が表示。全画像のロードが終わると回転が始まり、<br>比較的ロードに対するストレスが減る（気がする）</p>
+
+  <div class="demo">
+    <div class="demo-3 demo-content"><img src="img/1.png" width="480" height="270" alt=""></div>
+  </div>
+
+  <p class="h-code"><b>JavaScript</b></p>
+<pre><code class="javascript">ThreeSixtyRotate('.demo-3',{
+  imgPath: 'img/',
+  imgEx: 'png',
+  zeroPadding: 0,
+  imgFirstNum: 1,
+  totalFrame: 23,
+  startFrame: 1,
+  clockwise: false,
+  rotateSpeed: 1,
+  inertia: true,
+  autoRotate: true,
+  frameRate: 24,
+  overStop: true,
+  preload: true,
+  showDuration: 0
+});</code></pre>
+
+  <p class="h-code"><b>HTML</b></p>
+<pre><code class="html">&lt;div class="demo-3"&gt;&lt;img src="img/1.png" width="480" height="270" alt=""&gt;&lt;/div&gt;</code></pre>
+
+
+
+
+
+
+</article>
+
+    </main>
+  </div>
+
+<a href="https://github.com/1026/jQuery.ThreeSixtyRotate"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 </body>
 </html>

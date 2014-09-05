@@ -2,7 +2,7 @@
 
 画像連番で商品写真とかクルクルまわすやつ
 
-##Demo
+##Detail & Demo
 [http://1026.github.io/jQuery.ThreeSixtyRotate/demo/](http://1026.github.io/jQuery.ThreeSixtyRotate/demo/)
 
 ##Usage
@@ -41,7 +41,7 @@ JS
       rotateSpeed: 1,         //ドラッグで回転させるときのスピード
       inertia: true           //慣性 (false で慣性なし)
       autoRotate: false,      //自動で回転させるか
-      frameRate: 30,          //自動回転のフレームレート
+      frameRate: 30,          //フレームレート
       overStop: true,         //自動で回転させた時、マウスオーバーで止めるか否か
       preload: true,          //画像をプリロードするか（基本trueでいいかと）
       showDuration: 300       //フェード表示のduration
@@ -51,7 +51,6 @@ JS
 IE8+
 
 ##Note
-プリロードこけて止まったらゴメンナサイ。  
 CSSちゃんとすればレスポンシブでも動くはず。  
 Android 動かないかも。
 

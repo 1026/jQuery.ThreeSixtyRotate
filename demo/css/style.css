@@ -1,0 +1,389 @@
+@charset "UTF-8";
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  color: #333;
+  font: 100% / 1.7 'Open Sans', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+nav ul:after,
+header:after,
+article:after,
+main > dl > dd:after,
+main > h1 + ul:after,
+figure:after,
+footer:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+body > div {
+  margin: 0 auto;
+  padding: 3em 0.625em 5em;
+  max-width: 38.75em;
+}
+@media screen and (max-width: 641px) {
+  body > div {
+    padding: 3em 1em;
+  }
+}
+
+h1 {
+  margin-bottom: 0.4em;
+  font-size: 1.8em;
+  line-height: 1.4;
+}
+h2 {
+  margin: 2em 0 0.8em;
+  padding-bottom: 0.25em;
+  font-size: 1.5em;
+  line-height: 1.45;
+  border-bottom: 1px solid #eee;
+}
+h3 {
+  margin: 2.5em 0 1em;
+  font-size: 1.125em;
+  line-height: 1.5;
+}
+h3:before {
+  content: "";
+  display: block;
+  margin: 2.5em auto;
+  width: 60%;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  background: #eee;
+  color: #eee;
+}
+h2 + h3 {
+  margin-top: 0;
+}
+h2 + h3:before {
+  display: none;
+}
+h4 {
+  margin: 1em 0 0.875em;
+}
+h4:before {
+  content: "";
+  display: block;
+  margin: 2.5em auto;
+  width: 40%;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  background: #eee;
+  color: #eee;
+}
+h3 + h4:before {
+  display: none;
+}
+h5, h6 {
+  margin: 1em 0 0.92em;
+}
+
+a {
+  color: #4183c4;
+}
+a:hover {
+  color: #ba3925;
+  text-decoration: underline;
+}
+
+div > header {
+  position: relative;
+  margin: 0 0 6em;
+  font-size: 0.875em;
+}
+div > header:before,
+footer:before {
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #f2f2f0;
+  content: "";
+}
+div > header h1 {
+  float: right;
+  margin: 0;
+  padding: 0 0 0 0.4em;
+  background: #fff;
+  font-weight: 400;
+}
+div > header h1 a:hover {
+  text-decoration: none;
+}
+div > header nav ul,
+footer nav ul {
+  float: left;
+  margin: 0 0 0 -0.3125em;
+  padding: 0.2em 0 0 0;
+}
+div > header nav li,
+footer nav li {
+  float: left;
+  margin-right: 0.75em;
+  padding: 0 0.3125em;
+  background: #fff;
+  list-style: none;
+}
+div > header nav li a,
+footer a {
+  color: #b3b3b3;
+  text-decoration: none;
+}
+
+article:not(:last-child),
+main > dl:not(:last-child) {
+  margin-bottom: 2.5em;
+  padding-bottom: 2.5em;
+  border-bottom: 1px solid #f2f2f0;
+}
+main > dl dt a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+article header {
+  margin-bottom: 3.13em;
+}
+article h1 + p {
+  margin-bottom: 0.3125em;
+  color: #929292;
+}
+article h1 ~ dl,
+article header dl,
+main > dl dl {
+  float: left;
+  margin: 0 1.25em 0 0;
+  color: #b3b3b3;
+  font-size: 0.875em;
+}
+h1 a,
+article h1 ~ dl a,
+article header dl a,
+main > dl dl a {
+  color: inherit;
+  text-decoration: none;
+}
+article h1 ~ dl dt,
+article header dl dt,
+main > dl dl dt,
+article nav dl dt {
+  float: left;
+}
+article h1 ~ dl dd,
+article header dl dd,
+main > dl dl dd {
+  float: left;
+  margin: 0;
+}
+article h1 ~ dl ul,
+article header dl ul,
+main > dl dl ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+article h1 ~ dl li,
+article header dl li,
+main > dl dl li {
+  float: left;
+  margin-left: 0.5em;
+}
+article h1 ~ dl li:first-child,
+article header dl li:first-child,
+main > dl dl li:first-child,
+main > dl > dd,
+main > h1 + ul li:first-child {
+  margin-left: 0;
+}
+article h1 ~ dl li:not(:last-child):after,
+article header dl li:not(:last-child):after,
+main > dl dl li:not(:last-child):after,
+main > h1 + ul li:not(:last-child):after {
+  margin-left: 0.1em;
+  content: ",";
+}
+article nav {
+  margin-top: 3.625em;
+  padding-top: 2.185em;
+  border-top: 1px solid #f2f2f0;
+}
+article nav dl {
+  margin: 0.315em 0 0 0;
+}
+article nav dl dd {
+  overflow: hidden;
+  margin: 0;
+  padding-left: 0.25em;
+}
+main > dl:nth-of-type(1) {
+  margin-top: 2.63em;
+}
+main > dl > dt {
+  font-size: 1.125em;
+}
+main > dl > dt:after {
+  display: none;
+}
+
+article div, p, dl, figure, ul, ol, pre, table {
+  margin: 0 0 1.56em;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+hr {
+  margin: 3em auto;
+  width: 40%;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  background: #eee;
+  color: #eee;
+}
+dt:after {
+  margin: 0 0.35em;
+  content: ":";
+}
+pre {
+  padding: 0.5em 1em;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #f8f8f8;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+code {
+  font-size: 0.875em;
+  font-family: Consolas, Inconsolata, Monaco, "Andale Mono", monospace;
+}
+p code {
+  display: inline-block;
+  margin: 0 0.5em;
+  padding: 0 0.3125em;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #f8f8f8;
+  vertical-align: 0.125em;
+  line-height: 1.2;
+}
+blockquote {
+  margin: 0 0 0.5em;
+  padding: 0 0 0 2.375em;
+  border-left: 0.25em solid #eee;
+  color: #929292;
+  font-style: italic;
+}
+blockquote *:last-child {
+  margin-bottom: 0;
+}
+figcaption {
+  float: right;
+  font-size: 0.875em;
+}
+figcaption:before {
+  margin-right: 0.125em;
+  content: "−";
+}
+table {
+  border-collapse: collapse;
+}
+th, td {
+  padding: 0.125em 0.5em;
+  border: 1px solid #ddd;
+}
+th {
+  background-color: #f8f8f8;
+}
+ins {
+  display: inline-block;
+  padding-left: 3.5em;
+  text-decoration: none;
+}
+ins:before {
+  margin-left: -4em;
+  content: "【追記】";
+}
+ins:after {
+  content: "［ " attr(datatime) " ］";
+}
+
+main > h1 + ul li {
+  float: left;
+  margin-left: 0.75em;
+  list-style: none;
+  font-size: 0.94em;
+}
+main > h1 + ul li {
+  margin-left: 0.5em;
+}
+main > h1 + ul {
+  margin-top: 1.5em;
+  padding: 0.75em 0;
+  border-top: 1px solid #f2f2f0;
+  border-bottom: 1px solid #f2f2f0;
+}
+footer {
+  position: relative;
+  margin-top: 5.5em;
+}
+footer nav ul {
+  font-size: 0.875em;
+}
+footer p {
+  float: right;
+  margin: 0 -0.3125em 0 0;
+  padding: 0.1em 0.3125em 0;
+  background: #fff;
+  color: #b3b3b3;
+}
+
+.h-code {
+  margin: 1.56em 0 6px;
+}
+.demo {
+  margin-bottom: 0;
+}
+.demo * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.demo ul {
+  list-style: none;
+}
+.demo .demo-content {
+  position: relative;
+  width: 480px;
+  max-width: 100%;
+}
+.demo .demo-content ul {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+.demo .demo-content li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+.demo .load {
+  position: absolute;
+  line-height: 270px;
+  text-align: center;
+}
