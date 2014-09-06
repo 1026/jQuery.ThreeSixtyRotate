@@ -1,8 +1,7 @@
 /*
-* jQuery.ThreeSixtyRotate
-* version: 0.0.0
+* jQuery.ThreeSixtyRotate ( http://github.com/1026/jQuery.ThreeSixtyRotate )
 * author: 1026 (Tenjiro Namba)
-* License: MIT 
+* License: MIT ( http://www.opensource.org/licenses/mit-license.php )
 */
 
 (function(window, document, $){
@@ -154,6 +153,7 @@ ThreeSixtyRotate.prototype.addFrame = function(){
 
   self.frms = [];
 
+  var rotateFrame;
   for(var i = 0; i < self.totalFrame; i++){
     rotateFrame = new RotateFrame(self.imgs, i, self.startFrame);
     self.$lists.append(rotateFrame.$el);
@@ -227,7 +227,7 @@ ThreeSixtyRotate.prototype.changeImage = function(){
 ThreeSixtyRotate.prototype.update = function(){
   var self = this;
 
-  if(self.endFlg == true){
+  if(self.endFlg === true){
     self.accX = self.accX*self.inertia;
     self.preDeltaX = self.deltaX;
     if(self.accX > 1){
@@ -237,7 +237,7 @@ ThreeSixtyRotate.prototype.update = function(){
       if(Math.abs(self.deltaX) < 1 && self.deltaX > 0) self.deltaX = 1;
       self.changeImage();
     }else{
-      if(self.downFlag == false){
+      if(self.downFlag === false){
         self.deltaX = (self.deltaX > 0) ? 1 : -1;
         self.changeImage();
       } else {
@@ -245,10 +245,10 @@ ThreeSixtyRotate.prototype.update = function(){
       }
       self.endFlg = false;
     }
-  } else if(self.downFlag == false && self.overFlag == false && self.autoRotate == true){
+  } else if(self.downFlag === false && self.overFlag === false && self.autoRotate === true){
     self.deltaX = -1*self.clockwise;
     self.changeImage();
-  } else if(self.downFlag == false) {
+  } else if(self.downFlag === false) {
     self.deltaX = 0;
   }
 };
